@@ -1,0 +1,10 @@
+ma_benh_nhan = "BN" + str(input("Nhập mã bệnh nhân: "))
+nhiet_do = float(input("Nhập nhiệt độ cơ thể của bệnh nhân: "))
+nhip_tim = int(input("Nhập nhịp tim của bệnh nhân: "))
+
+print("KẾT QUẢ CHUẨN ĐOÁN DỮ LIỆU:")
+print(f"Mã bệnh nhân: {ma_benh_nhan}")
+print(f"Nhiệt độ cơ thể: {nhiet_do} độ C")
+print(f"=> Kiểu dữ liệu hệ thống ghi nhận: {type(nhiet_do)})")
+print(f"Nhịp tim: {nhip_tim} nhịp/phút")
+print(f"=> Kiểu dữ liệu hệ thống ghi nhận: {type(nhip_tim)})")
