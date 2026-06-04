@@ -1,4 +1,3 @@
-# Khởi tạo tồn kho
 laptop = 0
 phone = 0
 tablet = 0
@@ -14,7 +13,6 @@ while True:
 
     choice = input("Chọn chức năng: ")
 
-    # Xem báo cáo
     if choice == "1":
 
         print("\n===== BÁO CÁO TỒN KHO =====")
@@ -34,7 +32,6 @@ while True:
             print("*", end="")
         print()
 
-    # Nhập kho
     elif choice == "2":
 
         print("\n1. Laptop")
@@ -60,7 +57,6 @@ while True:
         else:
             print("Mặt hàng không hợp lệ!")
 
-    # Xuất kho
     elif choice == "3":
 
         print("\n1. Laptop")
@@ -98,7 +94,6 @@ while True:
         else:
             print("Mặt hàng không hợp lệ!")
 
-    # Cảnh báo tồn kho thấp
     elif choice == "4":
 
         print("\n===== CẢNH BÁO =====")
@@ -112,12 +107,10 @@ while True:
         if tablet < 10:
             print(f"[CẢNH BÁO] Tablet sắp hết (Chỉ còn {tablet} sản phẩm)")
 
-    # Thoát
     elif choice == "5":
         print("Thoát chương trình")
         break
 
-    # Menu sai
     else:
         print("Lựa chọn không hợp lệ!")
         
