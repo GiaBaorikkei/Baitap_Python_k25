@@ -83,7 +83,6 @@ while True:
         search_id = input("Nhập mã sản phẩm cần xoá: ").strip().upper()
         a = False
         for i in cart_items:
-            print(f"{search_id} {i["id"]}")
             if search_id.upper() == i["id"]:
                 cart_items.remove(i)
                 print("Xoá thành công")
