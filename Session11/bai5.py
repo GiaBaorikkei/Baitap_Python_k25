@@ -37,7 +37,7 @@ while True:
     print("5. Nhập thêm hàng vào kho cửa hàng")
     print("6. Thoát chương trình")
 
-    hoice = int(input("Mời nhập lựa chọn: "))
+    choice = int(input("Mời nhập lựa chọn: "))
     if choice == 1:
         if len(product_list) == 0:
             print("Danh sách sản phẩm hiện đang trống.")
