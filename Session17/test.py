@@ -222,8 +222,6 @@ def main():
             search_student()
         elif choice == "6":
             statistics_by_level()
-        elif choice == "7":
-            print("là sao??")
         elif choice == "8":
             print("Đã thoát chương trình.")
             break
