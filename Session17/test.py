@@ -144,11 +144,13 @@ def ranking_student(average_score):
     
 def search_student():
     student_id = input("Nhập mã sinh viên cần tìm kiếm: ").strip().upper()
-    
     for i in students_list:
         if i["id"] == student_id:
             print(f"{'Mã SV':<10} | {'Họ tên':<20} | {'Toán':<10} | {'Lý':<10} | {'Hoá':<10} | {'TB':<10} | {'Xếp loại'}")
             print(f"{i['id']:<10} | {i['name']:<20} | {i['math_score']:<10} | {i['physics_score']:<10} | {i['chemistry_score']:<10} | {i['average_score']:<10} | {i['level']}")
+            return
+        
+    print("Không tìm thấy sinh viên.")
 
 
 def delete_student():
