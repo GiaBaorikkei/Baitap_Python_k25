@@ -7,7 +7,7 @@ def show_products():
     if len(products_list) == 0:
         print("Cửa hàng hiện chưa có sản phẩm nào.")
         return
-    print("--- DANH SÁCH SẢN PHẨM ---")
+    print("------------ DANH SÁCH SẢN PHẨM -----------")
     print(f"{'ID':<10} | {'Tên sản phẩm':<20} | {'Giá bán':<10}")
     for i in products_list:
         print(f"{i['id']:<10} | {i['name']:<20} | {i['price']:<10}")
