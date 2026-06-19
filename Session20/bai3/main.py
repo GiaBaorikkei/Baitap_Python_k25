@@ -70,7 +70,7 @@ def add_match(match_list):
     """
     print("\n--- THÊM TRẬN ĐẤU MỚI ---")
 
-    match_id = input("Nhập mã trận đấu: ").strip()
+    match_id = input("Nhập mã trận đấu: ").strip().upper()
 
     if not match_id:
         print("Mã trận đấu không được để trống.")
@@ -83,8 +83,8 @@ def add_match(match_list):
             logging.warning(f"Match ID {match_id} already exists.")
             return
 
-    team_a = input("Nhập tên Đội A: ").strip()
-    team_b = input("Nhập tên Đội B: ").strip()
+    team_a = input("Nhập tên Đội A: ").strip().title()
+    team_b = input("Nhập tên Đội B: ").strip().title()
 
     if not team_a or not team_b:
         print("Tên đội không được để trống.")
