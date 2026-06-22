@@ -1,0 +1,62 @@
+1. Sử dụng Conditional Breakpoint (Điểm dừng có điều kiện)
+
+Quan sát biến `base_rate` thông qua bảng Variables trong IDE:
+
+* Trước khi thực thi dòng `base_rate = 10000`: biến `base_rate` có giá trị `30000`. Giá trị này được gán từ nhánh điều kiện:
+
+elif method == "express":
+    base_rate = 30000
+
+Do ở trường hợp kiểm thử, tham số `method` nhận giá trị `"express"`.
+
+* Sau khi thực thi dòng `base_rate = 10000`: giá trị của `base_rate` thay đổi thành `10000`. Giá trị `30000` ban đầu đã bị ghi đè hoàn toàn.
+
+2. Debug luồng Logging
+
+Giải thích:
+
+Dòng log `logger.info(...)` ở đầu hàm không hiển thị trên Console vì trong hàm `logging.basicConfig()` mức log đang được thiết lập là:
+
+level=logging.WARNING
+
+Theo cấu trúc phân cấp của thư viện `logging` trong Python:
+
+DEBUG < INFO < WARNING < ERROR < CRITICAL
+
+Hệ thống chỉ hiển thị các log có mức độ từ `WARNING` trở lên, do đó các log ở mức `INFO` và `DEBUG` sẽ bị bỏ qua.
+
+Cách khắc phục:
+
+Để hiển thị dòng log này cần thay đổi cấu hình:
+
+level=logging.INFO
+
+Hoặc:
+
+level=logging.DEBUG
+
+3. Báo cáo lỗi logic
+
+Vị trí lỗi:
+
+Lỗi xuất hiện tại dòng:
+
+base_rate = 10000
+
+bên trong khối:
+
+if distance >= 20:
+
+Giải thích nguyên nhân:
+
+Thông qua việc quan sát giá trị biến `base_rate` trong Variables Panel, có thể thấy giá trị biến thay đổi từ `30000` xuống `10000`. Nguyên nhân là do lập trình viên đã sử dụng toán tử gán (`=`), khiến giá trị hiện tại của biến bị ghi đè hoàn toàn.
+
+Mục đích của đoạn mã là cộng thêm phụ thu đường xa vào phí cơ sở hiện có. Vì vậy cần sử dụng toán tử cộng dồn (`+=`):
+
+base_rate += 10000
+
+Thay vì:
+
+base_rate = 10000
+
+Nếu sử dụng toán tử `=`, hệ thống sẽ mất giá trị phí cơ sở trước đó và dẫn đến tính sai tổng phí vận chuyển.
