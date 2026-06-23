@@ -1,0 +1,5 @@
+===== BÁO CÁO HỌC TẬP =====
+Thời gian tạo: 2026-06-23 21:37:03.756409
+Tổng số sinh viên: 3
+Số đạt yêu cầu: 2
+Số cần cải thiện: 1
